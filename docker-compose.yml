@@ -1,0 +1,16 @@
+version: '2'
+services:
+   backup:
+      image: simple-volume-backup
+      volumes:
+         - backup-target:/backup
+         - backup-source:/to_backup
+
+volumes:
+   backup-target:
+      driver: local
+      driver_opts:
+         type: 'none'
+         o: 'bind'
+         device: '/var/opt/app/backup/'
+   backup-source:
