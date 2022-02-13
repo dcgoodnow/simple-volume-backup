@@ -1,5 +1,5 @@
 #!/bin/sh
-filename=auth_vol_$(date +%F-%T).tar.gz
+filename=$name+_vol_$(date +%F-%T).tar.gz
 tar -zcvf $filename /to_backup
 
 mv $filename /backup/
